@@ -4,6 +4,6 @@ public class MultiWordCounter implements TextProcessor {
 	
 	
 	public MultiWordCounter(String[] words)	{
-		
+		// poggers
 	}
 }
