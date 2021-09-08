@@ -15,6 +15,7 @@ public class Holgersson {
 		
 		TextProcessor p = new SingleWordCounter("nils");
 		TextProcessor q = new SingleWordCounter("norge");
+		TextProcessor pq = new MultiWordCounter(REGIONS);
 
 		Scanner s = new Scanner(new File("nilsholg.txt"));
 		s.findWithinHorizon("\uFEFF", 1);
@@ -25,11 +26,13 @@ public class Holgersson {
 
 			p.process(word);
 			q.process(word);
+			pq.process(word);
 		}
 
 		s.close();
 
 		p.report();
 		q.report();
+		pq.report();
 	}
 }
