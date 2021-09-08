@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MultiWordCounter implements TextProcessor {
-	Map<String, Integer> m;
+	private Map<String, Integer> m;
 	
 	public MultiWordCounter(String[] landskap)	{
 		m = new HashMap<String, Integer>();
