@@ -6,21 +6,22 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class GeneralWordCounter implements TextProcessor {
 	
 	private Map<String, Integer> wordMap;
-	private Set<String> wordSet;
+	private Set<String> stopwordSet;
 	
 	public GeneralWordCounter (Set<String> stopwords) {
-		wordMap = new HashMap<String, Integer>();
-		wordSet = new HashSet<String>();
+		wordMap = new TreeMap<String, Integer>();
+		stopwordSet = new HashSet<String>();
 		for (String s : stopwords) {
-			wordSet.add(s);
+			stopwordSet.add(s);
 		}
 	}
 	public void process (String word) {
-		if (!wordSet.contains(word)) {
+		if (!stopwordSet.contains(word)) {
 			if (!wordMap.containsKey(word)) {
 				wordMap.put(word, 1);
 			}
@@ -30,8 +31,13 @@ public class GeneralWordCounter implements TextProcessor {
 	}
 	
 	public void report () {
-		Set<Map.Entry<String, Integer>> wordSet = counts.entrySet();
-		List<Map.Entry<String,Integer>> wordList = new ArrayList<>(wordSet);
+		Set<Map.Entry<String, Integer>> wordSet = wordMap.entrySet();
+		List<Map.Entry<String, Integer>> wordList = new ArrayList<>(wordSet);
+		wordList.sort(new WordCountComparator());
+		for (int i = 0; i < 600; i++) {
+			System.out.println(wordList.get(i).toString());
+		}
+		
 		/* for (String key : wordMap.keySet()) {
 			if (wordMap.get(key) >= 200) {
 				System.out.println(key.toString() + " " + wordMap.get(key));

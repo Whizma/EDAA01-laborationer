@@ -24,11 +24,12 @@ public class Holgersson {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException {
-		
+		long t0 = System.nanoTime();
 /*		TextProcessor p = new SingleWordCounter("nils");
 		TextProcessor q = new SingleWordCounter("norge");
-		TextProcessor multi = new MultiWordCounter(REGIONS);
 		*/
+		TextProcessor multi = new MultiWordCounter(REGIONS);
+		
 		TextProcessor general = new GeneralWordCounter(scanStopWords());
 
 		Scanner s = new Scanner(new File("nilsholg.txt"));
@@ -41,15 +42,18 @@ public class Holgersson {
 			/*
 			p.process(word);
 			q.process(word);
-			multi.process(word);
 			*/
+			multi.process(word);
 			general.process(word);
 		}		
 		 /* s.close();
 		 p.report();
 		 q.report();
-		 multi.report();
 		 */
+		 multi.report();
+		 
 		general.report();
+		long t1 = System.nanoTime();
+		System.out.println("tid: " + (t1 - t0) / 1000000.0 + " ms");
 	}
 }
