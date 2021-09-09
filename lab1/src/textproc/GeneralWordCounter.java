@@ -12,22 +12,29 @@ public class GeneralWordCounter implements TextProcessor {
 	
 	public GeneralWordCounter (Set<String> stopwords) {
 		wordMap = new HashMap<String, Integer>();
+		wordSet = new HashSet<String>();
 		for (String s : stopwords) {
 			wordSet.add(s);
 		}
 	}
 	public void process (String word) {
 		if (!wordSet.contains(word)) {
-			int freq = wordMap.getOrDefault(word, null) + 1;
-			wordMap.put(word, freq);
+			if (!wordMap.containsKey(word)) {
+				wordMap.put(word, 1);
+			}
+			int freq = wordMap.get(word);
+			wordMap.put(word, freq + 1);
 		}
 	}
 	
 	public void report () {
-		for (String key : wordMap.keySet()) {
+		Set<Map.Entry<String, Integer>> wordSet = counts.entrySet();
+		List<Map.Entry<String,Integer>> wordList = new ArrayList<>(wordSet);
+		/* for (String key : wordMap.keySet()) {
 			if (wordMap.get(key) >= 200) {
 				System.out.println(key.toString() + " " + wordMap.get(key));
 			}
 		}
+		*/
 	}
 }

@@ -8,10 +8,10 @@ import java.util.Set;
 
 public class Holgersson {
 
-	public static final String[] REGIONS = { "blekinge", "bohuslän", "dalarna", "dalsland", "gotland", "gästrikland",
-			"halland", "hälsingland", "härjedalen", "jämtland", "lappland", "medelpad", "närke", "skåne", "småland",
-			"södermanland", "uppland", "värmland", "västerbotten", "västergötland", "västmanland", "ångermanland",
-			"öland", "östergötland" };
+	public static final String[] REGIONS = { "blekinge", "bohuslÃ¤n", "dalarna", "dalsland", "gotland", "gÃ¤strikland",
+			"halland", "hÃ¤lsingland", "hÃ¤rjedalen", "jÃ¤mtland", "lappland", "medelpad", "nÃ¤rke", "skÃ¥ne", "smÃ¥land",
+			"sÃ¶dermanland", "uppland", "vÃ¤rmland", "vÃ¤sterbotten", "vÃ¤stergÃ¶tland", "vÃ¤stmanland", "Ã¥ngermanland",
+			"Ã¶land", "Ã¶stergÃ¶tland" };
 	
 	private static Set<String> scanStopWords() throws FileNotFoundException {
 		Scanner scan = new Scanner(new File("undantagsord.txt"));
@@ -25,9 +25,10 @@ public class Holgersson {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		TextProcessor p = new SingleWordCounter("nils");
+/*		TextProcessor p = new SingleWordCounter("nils");
 		TextProcessor q = new SingleWordCounter("norge");
 		TextProcessor multi = new MultiWordCounter(REGIONS);
+		*/
 		TextProcessor general = new GeneralWordCounter(scanStopWords());
 
 		Scanner s = new Scanner(new File("nilsholg.txt"));
@@ -37,15 +38,18 @@ public class Holgersson {
 		while (s.hasNext()) {
 			String word = s.next().toLowerCase();
 
-		//	p.process(word);
-		//	q.process(word);
-		//	multi.process(word);
+			/*
+			p.process(word);
+			q.process(word);
+			multi.process(word);
+			*/
 			general.process(word);
 		}		
-		// s.close();
-		// p.report();
-		// q.report();
-		// multi.report();
+		 /* s.close();
+		 p.report();
+		 q.report();
+		 multi.report();
+		 */
 		general.report();
 	}
 }
