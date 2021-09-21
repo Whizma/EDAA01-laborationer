@@ -7,13 +7,21 @@
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item key="dialogHeight" value="-1"/>
 		<item key="dialogWidth" value="-1"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_WIDTH" value="450"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_HEIGHT" value="506"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="textEntries">
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
+			<item value="search.in.help"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="search.help"/>
 		</list>
 		<list key="textArray">
+			<item value="devstyle"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
@@ -25,7 +33,6 @@
 	<section name="FileSystemImportWizard">
 	</section>
 	<section name="PreferencesImportWizard">
-		<item key="" value="C:\Users\isak\Downloads\theme-1115.epf"/>
 		<item key="" value="C:\Users\isak\Downloads\theme-46248.epf"/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
 			<item value="C:\Users\isak\Downloads\theme-46248.epf"/>

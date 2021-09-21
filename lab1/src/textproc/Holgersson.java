@@ -25,9 +25,9 @@ public class Holgersson {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		long t0 = System.nanoTime();
-/*		TextProcessor p = new SingleWordCounter("nils");
+		TextProcessor p = new SingleWordCounter("nils");
 		TextProcessor q = new SingleWordCounter("norge");
-		*/
+		
 		TextProcessor multi = new MultiWordCounter(REGIONS);
 		
 		TextProcessor general = new GeneralWordCounter(scanStopWords());
@@ -39,17 +39,17 @@ public class Holgersson {
 		while (s.hasNext()) {
 			String word = s.next().toLowerCase();
 
-			/*
+			
 			p.process(word);
 			q.process(word);
-			*/
+			
 			multi.process(word);
 			general.process(word);
 		}		
-		 /* s.close();
+		  s.close();
 		 p.report();
 		 q.report();
-		 */
+		 
 		 multi.report();
 		 
 		general.report();
