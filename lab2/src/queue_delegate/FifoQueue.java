@@ -55,5 +55,7 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	public Iterator<E> iterator() {
 		return list.iterator();
 	}
+	
+	
 
 }
