@@ -21,7 +21,7 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * @throws IllegalArgumentException if this queue and q are identical
 	 */
 	public void append(FifoQueue<E> q) {
-	    if (size == 0 & q.size != 0) {
+		if (size == 0 & q.size != 0) {
 			last = q.last;
 			size = q.size;
 			q.last = null;
@@ -30,10 +30,10 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 		if (size > 0 && q.size > 0) {
 			QueueNode<E> currentHead = last.next;
 			last.next = q.last.next;
-            q.last.next = currentHead;
-            size += q.size;
-            q.last = null;
-            q.size = 0; 
+			q.last.next = currentHead;
+			size += q.size;
+			q.last = null;
+			q.size = 0;
 		}
 
 		if (this.equals(q)) {

@@ -7,20 +7,21 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import queue_singlelinkedlist.FifoQueue;
+
 class TestAppendFIfoQueue {
 	private FifoQueue<Integer> myIntQueue;
-    private FifoQueue<Integer> mySecondIntQueue;
+	private FifoQueue<Integer> mySecondIntQueue;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		myIntQueue = new FifoQueue<>();
-        mySecondIntQueue = new FifoQueue<>();
+		mySecondIntQueue = new FifoQueue<>();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		myIntQueue = null;
-        mySecondIntQueue = null;
+		mySecondIntQueue = null;
 	}
 
 	/** Test if two empty queues throws IllegalArgumentException */
@@ -30,7 +31,8 @@ class TestAppendFIfoQueue {
 		assertEquals(0, mySecondIntQueue.size(), "Wrong queuesize");
 
 	}
-	/** Test appending empty queue to non empty queue  */
+
+	/** Test appending empty queue to non empty queue */
 	@Test
 	void testAppendEmptytoNonEmptyQueue() {
 		myIntQueue.offer(5);
@@ -43,40 +45,40 @@ class TestAppendFIfoQueue {
 		assertEquals(0, mySecondIntQueue.size(), "Wrong queuesize");
 
 		assertEquals(5, (int) myIntQueue.poll(), "Element in wrong order");
-        assertEquals(7, (int) myIntQueue.poll(), "Element in wrong order");
+		assertEquals(7, (int) myIntQueue.poll(), "Element in wrong order");
 		assertEquals(1, (int) myIntQueue.poll(), "Element in wrong order");
 	}
 
-	
-    /**
-      Test append non-empty queue to non-empty queue */
+	/**
+	 * Test append non-empty queue to non-empty queue
+	 */
 
-    @Test
-    public void testAppendNonEmptyToNonEmpty() {
-        myIntQueue.offer(1);
-        myIntQueue.offer(2);
-        myIntQueue.offer(3);
-        mySecondIntQueue.offer(1);
-        mySecondIntQueue.offer(2);
-        mySecondIntQueue.offer(3);
+	@Test
+	public void testAppendNonEmptyToNonEmpty() {
+		myIntQueue.offer(1);
+		myIntQueue.offer(2);
+		myIntQueue.offer(3);
+		mySecondIntQueue.offer(1);
+		mySecondIntQueue.offer(2);
+		mySecondIntQueue.offer(3);
 
-        myIntQueue.append(mySecondIntQueue);
+		myIntQueue.append(mySecondIntQueue);
 
-        assertEquals("Wrong size of queue", 6, myIntQueue.size());
-        assertEquals("Wrong size of queue", 0, mySecondIntQueue.size());
+		assertEquals("Wrong size of queue", 6, myIntQueue.size());
+		assertEquals("Wrong size of queue", 0, mySecondIntQueue.size());
 
-        assertEquals("Element in wrong order", 1, (int) myIntQueue.poll());
-        assertEquals("Element in wrong order", 2, (int) myIntQueue.poll());
-        assertEquals("Element in wrong order", 3, (int) myIntQueue.poll());
-        assertEquals("Element in wrong order", 1, (int) myIntQueue.poll());
-        assertEquals("Element in wrong order", 2, (int) myIntQueue.poll());
-        assertEquals("Element in wrong order", 3, (int) myIntQueue.poll());
-    }
+		assertEquals("Element in wrong order", 1, (int) myIntQueue.poll());
+		assertEquals("Element in wrong order", 2, (int) myIntQueue.poll());
+		assertEquals("Element in wrong order", 3, (int) myIntQueue.poll());
+		assertEquals("Element in wrong order", 1, (int) myIntQueue.poll());
+		assertEquals("Element in wrong order", 2, (int) myIntQueue.poll());
+		assertEquals("Element in wrong order", 3, (int) myIntQueue.poll());
+	}
 
-	 /** Test appending queue with itself */
+	/** Test appending queue with itself */
 
-    @Test
-    public void testAppendSameQueueException(){
+	@Test
+	public void testAppendSameQueueException() {
 		assertThrows(IllegalArgumentException.class, () -> myIntQueue.append(myIntQueue));
 	}
 }
