@@ -77,12 +77,6 @@ class TestAppendFIfoQueue {
 
     @Test
     public void testAppendSameQueueException(){
-		try {
-			myIntQueue.append(myIntQueue);
-			fail("Should raise IllegalArugmentException");
-		}
-		catch(IllegalArgumentException e) {
-
-		}
+		assertThrows(IllegalArgumentException.class, () -> myIntQueue.append(myIntQueue));
 	}
 }
