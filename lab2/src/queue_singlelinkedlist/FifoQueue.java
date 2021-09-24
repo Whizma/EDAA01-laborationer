@@ -1,4 +1,5 @@
 package queue_singlelinkedlist;
+
 import java.util.*;
 
 public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
@@ -11,21 +12,20 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 		size = 0;
 	}
 
-	/**	
-	 * Inserts the specified element into this queue, if possible
-	 * post:	The specified element is added to the rear of this queue
-	 * @param	e the element to insert
-	 * @return	true if it was possible to add the element 
-	 * 			to this queue, else false
+	/** 
+	 * Inserts the specified element into this queue, if possible post: The
+	 * specified element is added to the rear of this queue a
+	 * 
+	 * @param e the element to insert
+	 * @return true if it was possible to add the element to this queue, else false
 	 */
 	public boolean offer(E e) {
 		QueueNode<E> element = new QueueNode<>(e);
-		
+
 		if (size == 0) {
 			last = element;
 			last.next = element;
-		}
-		else {
+		} else {
 			element.next = last.next;
 			last.next = element;
 			last = element;
@@ -33,23 +33,27 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 		size++;
 		return true;
 	}
-	
-	/**	
+
+	/**
 	 * Returns the number of elements in this queue
+	 * 
 	 * @return the number of elements in this queue
 	 */
-	public int size() {		
+	public int size() {
 		return size;
 	}
-	
-	/**	
-	 * Retrieves, but does not remove, the head of this queue, 
-	 * returning null if this queue is empty
-	 * @return 	the head element of this queue, or null 
-	 * 			if this queue is empty
+
+	/**
+	 * Retrieves, but does not remove, the head of this queue, returning null if
+	 * this queue is empty
+	 * 
+	 * @return the head element of this queue, or null if this queue is empty
 	 */
 	public E peek() {
-		return null;
+		if (size == null) {
+			return null;
+		}
+		return last.next.element;
 	}
 
 	/**	
@@ -59,17 +63,22 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * @return 	the head of this queue, or null if the queue is empty 
 	 */
 	public E poll() {
-		return null;
+		if (size == null) {
+			return null;
 	}
-	
-	/**	
+		QueueNode<E> head = last.next;
+		last.next = head.next;
+		size--;
+		return head.element;
+	/**
 	 * Returns an iterator over the elements in this queue
+	 * 
 	 * @return an iterator over the elements in this queue
-	 */	
+	 */
 	public Iterator<E> iterator() {
 		return null;
 	}
-	
+
 	private static class QueueNode<E> {
 		E element;
 		QueueNode<E> next;
