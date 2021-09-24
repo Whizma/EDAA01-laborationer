@@ -54,7 +54,7 @@ class TestAppendFIfoQueue {
 	 */
 
 	@Test
-	public void testAppendNonEmptyToNonEmpty() {
+	void testAppendNonEmptyToNonEmpty() {
 		myIntQueue.offer(1);
 		myIntQueue.offer(2);
 		myIntQueue.offer(3);
@@ -78,7 +78,7 @@ class TestAppendFIfoQueue {
 	/** Test appending queue with itself */
 
 	@Test
-	public void testAppendSameQueueException() {
+	void testAppendSameQueueException() {
 		assertThrows(IllegalArgumentException.class, () -> myIntQueue.append(myIntQueue));
 	}
 }
