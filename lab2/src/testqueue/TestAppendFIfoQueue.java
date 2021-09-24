@@ -24,7 +24,7 @@ class TestAppendFifoQueue {
         mySecondIntQueue = null;
     }
 
-    /** Test if two empty queues throws IllegalArgumentException */
+    /** Test if appending two empty queues throws IllegalArgumentException */
     @Test
     void testAppendEmptyQueues() {
         assertEquals(0, myIntQueue.size(), "Wrong queuesize");
@@ -50,7 +50,7 @@ class TestAppendFifoQueue {
     }
 
     /**
-     * Test append non-empty queue to non-empty queue
+     * Test appending non-empty queue to non-empty queue
      */
 
     @Test
