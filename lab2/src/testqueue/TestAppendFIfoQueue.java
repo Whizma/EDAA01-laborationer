@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import queue_singlelinkedlist.FifoQueue;
 
-class TestAppendFifoQueue {
+class TestAppendFifoQueue{
     private FifoQueue<Integer> myIntQueue;
     private FifoQueue<Integer> mySecondIntQueue;
 
@@ -27,7 +27,8 @@ class TestAppendFifoQueue {
     /** Test if appending two empty queues throws IllegalArgumentException */
     @Test
     void testAppendEmptyQueues() {
-        assertEquals(0, myIntQueue.size(), "Wrong queuesize");
+    	myIntQueue.append(mySecondIntQueue);
+    	assertEquals(0, myIntQueue.size(), "Wrong queuesize");
         assertEquals(0, mySecondIntQueue.size(), "Wrong queuesize");
 
     }

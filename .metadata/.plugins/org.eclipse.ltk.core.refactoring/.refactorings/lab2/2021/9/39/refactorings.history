@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;testqueue.TestAppendFIfoQueue.java&apos; to &apos;TestAppendFifoQueue.java&apos;&#x0D;&#x0A;- Original project: &apos;lab2&apos;&#x0D;&#x0A;- Original element: &apos;testqueue.TestAppendFIfoQueue.java&apos;&#x0D;&#x0A;- Renamed element: &apos;testqueue.TestAppendFifoQueue.java&apos;" description="Rename compilation unit &apos;TestAppendFIfoQueue.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;testqueue{TestAppendFIfoQueue.java" name="TestAppendFifoQueue.java" references="false" stamp="1632945131660" version="1.0"/>
+</session>
