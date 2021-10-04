@@ -46,7 +46,7 @@ public class Holgersson {
 			multi.process(word);
 			general.process(word);
 		}		
-		  s.close();
+		 s.close();
 		 p.report();
 		 q.report();
 		 
