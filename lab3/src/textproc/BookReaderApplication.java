@@ -25,6 +25,7 @@ public class BookReaderApplication {
 			general.process(word);
 		}
 		s.close();
+		general.report();
 		BookReaderController b = new BookReaderController(general);
 	}
 
