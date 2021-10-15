@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
@@ -62,7 +63,7 @@ public class BookReaderController {
 			listView.ensureIndexIsVisible(0);
 		});
 
-		JTextArea textInput = new JTextArea("Search");
+		JTextField textInput = new JTextField("Search");
 		textInput.setBackground(Color.WHITE);
 		textInput.setForeground(Color.BLACK);
 
