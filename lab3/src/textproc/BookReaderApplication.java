@@ -27,6 +27,7 @@ public class BookReaderApplication {
 		s.close();
 		general.report();
 		BookReaderController b = new BookReaderController(general);
+		b.equals(b); //test
 	}
 
 }
