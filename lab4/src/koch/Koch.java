@@ -44,13 +44,13 @@ public class Koch extends Fractal {
 	private void fractalLine(TurtleGraphics turtle, int order, double length, int alpha) {
 		if (order == 0) {
 			turtle.setDirection(alpha);
-			turtle.forward(length);							// "rita en linje med längden length och riktningen alpha"
-			} else {
-			fractalLine(turtle, order-1, length/3, alpha);
-			fractalLine(turtle, order-1, length/3, alpha-60);
-			fractalLine(turtle, order-1, length/3, alpha+60);
-			fractalLine(turtle, order-1, length/3, alpha);
-			}
+			turtle.forward(length); // "rita en linje med längden length och riktningen alpha"
+		} else {
+			fractalLine(turtle, order - 1, length / 3, alpha);
+			fractalLine(turtle, order - 1, length / 3, alpha - 60);
+			fractalLine(turtle, order - 1, length / 3, alpha + 60);
+			fractalLine(turtle, order - 1, length / 3, alpha);
+		}
 	}
 
 }
