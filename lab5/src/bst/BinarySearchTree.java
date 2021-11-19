@@ -5,22 +5,24 @@ import java.util.Comparator;
 
 
 public class BinarySearchTree<E> {
-  BinaryNode<E> root;  // Används också i BSTVisaulizer
-  int size;            // Används också i BSTVisaulizer
-  private Comparator<E> ccomparator;
+  BinaryNode<E> root;  // AnvÃ¤nds ocksÃ¥ i BSTVisaulizer
+  int size;            // AnvÃ¤nds ocksÃ¥ i BSTVisaulizer
+  private Comparator<E> comparator;
     
 	/**
 	 * Constructs an empty binary search tree.
 	 */
 	public BinarySearchTree() {
-		
+		root = null;
+		comparator = (e1, e2) -> ((Comparable<E>) e1).compareTo(e2);;
 	}
 	
 	/**
 	 * Constructs an empty binary search tree, sorted according to the specified comparator.
 	 */
 	public BinarySearchTree(Comparator<E> comparator) {
-		
+		root = null;
+		this.comparator = comp;
 	}
 
 	/**
