@@ -25,3 +25,10 @@ F4. Läs igenom texten under rubriken ”Bakgrund”.
 F5. Lös uppgifterna D1- D5.
 
 F6. Läs igenom övriga uppgifter.
+
+I vissa av de uppgifter du löst (t ex height och add) finns det en publik metod som
+anropar motsvarande rekursiva metod. Varför behövs bägge metoderna?
+
+
+I samband med ombyggnaden av trädet används en lista av typen ArrayList för att
+mellanlagra elementen. Skulle man lika gärna kunna använda en LinkedList?

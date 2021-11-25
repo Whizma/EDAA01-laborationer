@@ -24,7 +24,6 @@
 <item elementID="=lab5" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=lab6" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/EDAA01 laborationer" type="4"/>
-<item elementID="=banktest" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=testqueue" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1577718617807_2" label="Window Working Set" name="Aggregate for window 1577718617807"/>

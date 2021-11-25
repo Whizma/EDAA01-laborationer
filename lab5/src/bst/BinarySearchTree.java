@@ -8,6 +8,21 @@ public class BinarySearchTree<E> {
 	int size; // AnvÃ¤nds ocksÃ¥ i BSTVisaulizer
 	private Comparator<E> comparator;
 
+	public static void main(String[] args) {
+		BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>();
+		BSTVisualizer vis = new BSTVisualizer("Tree viewer", 600, 600);
+
+		bst.add(30);
+		bst.add(20);
+		bst.add(10);
+		bst.add(40);
+		bst.add(50);
+		bst.add(5);
+		bst.printTree();
+		bst.rebuild();
+		vis.drawTree(bst);
+	}
+
 	/**
 	 * Constructs an empty binary search tree.
 	 */
@@ -41,7 +56,7 @@ public class BinarySearchTree<E> {
 			this.size++;
 			return true;
 		}
-		return add(root, x);
+		return add(this.root, x);
 	}
 
 	private boolean add(BinaryNode<E> n, E x) {
@@ -56,12 +71,13 @@ public class BinarySearchTree<E> {
 			}
 		} else {
 			if (n.right != null) {
-				add(n.left, x);
+				add(n.right, x);
 			} else {
 				n.right = new BinaryNode<E>(x);
 				size++;
 			}
 		}
+
 		return true;
 	}
 
@@ -121,17 +137,23 @@ public class BinarySearchTree<E> {
 	}
 
 	/**
-	 * Builds a complete tree from the elements in the tree.
+	 * Builds a balanced tree from the elements in the tree.
 	 */
 	public void rebuild() {
-
+		ArrayList<E> sorted = new ArrayList<>();
+		toArray(root, sorted);
+		root = buildTree(sorted, 0, sorted.size() - 1);
 	}
 
 	/*
 	 * Adds all elements from the tree rooted at n in inorder to the list sorted.
 	 */
 	private void toArray(BinaryNode<E> n, ArrayList<E> sorted) {
-
+		if (n != null) {
+			toArray(n.left, sorted);
+			sorted.add(n.element);
+			toArray(n.right, sorted);
+		}
 	}
 
 	/*
@@ -140,7 +162,14 @@ public class BinarySearchTree<E> {
 	 * Returns the root of tree.
 	 */
 	private BinaryNode<E> buildTree(ArrayList<E> sorted, int first, int last) {
-		return null;
+		if (first > last || first == sorted.size()) {
+			return null;
+		}
+		int mid = (first + last) / 2;
+		BinaryNode<E> n = new BinaryNode<E>(sorted.get(mid));
+		n.left = buildTree(sorted, first, mid - 1);
+		n.right = buildTree(sorted, mid + 1, last);
+		return n;
 	}
 
 	static class BinaryNode<E> {
