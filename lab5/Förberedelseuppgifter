@@ -1,1 +1,27 @@
-F�rberedelseuppgifter
+Förberedelseuppgifter
+
+F1. Betrakta trädet i fig. 1 och besvara följande frågor:
+a) Vad skrivs ut ut om trädets element skrivs ut i inorder? Svar: 10 20 47 30
+b) Vilken höjd har trädet? Svar: 3
+c) Vilken höjd får trädet om 42 sätts in? Svar: 3
+
+F2. I uppgift D2 kommer du att skriva en rekursiv metod för att beräkna trädets höjd.
+a) Den rekursiva algoritmen kan uttryckas i pseudokod. Komplettera algoritmen:
+
+Om trädet är tomt är höjden 0
+annars är höjden 1 + höjden av det högsta subträdet (vänster eller höger)
+
+b) Sök i dokumentationen av klassen Math på nätet. Med vilken metod kan man få det
+största värdet av två heltal? Svar: Math.max(int a, int b);
+
+F3. Repetera algoritmen för binärsökning från föreläsningen om rekursion. I uppgift D7 kommer
+du i att kunna hämta inspiration från den algoritmen. Den rekursiva metoden har
+parametrar first och last för att hålla reda på i vilken del av vektorn man söker. Hur
+beräknar man mitten i intervallet [first, last]?
+int mid = first + ((last - first) / 2);
+
+F4. Läs igenom texten under rubriken ”Bakgrund”.
+
+F5. Lös uppgifterna D1- D5.
+
+F6. Läs igenom övriga uppgifter.
