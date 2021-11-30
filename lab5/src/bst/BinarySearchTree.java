@@ -40,10 +40,7 @@ public class BinarySearchTree<E> {
 	 */
 	public BinarySearchTree(Comparator<E> comparator) {
 		root = null;
-<<<<<<< Updated upstream
 		size = 0;
-=======
->>>>>>> Stashed changes
 		this.comparator = comparator;
 	}
 
